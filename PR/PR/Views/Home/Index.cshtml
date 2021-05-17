@@ -1,0 +1,53 @@
+
+
+<div>
+    <ul>
+        <!--Português-->
+        <li>
+            <a href="/home/Index/pt">
+                <img src="~/icones/pt-pt.png" name="f" />
+            </a>
+        </li>
+
+        <!--English-->
+        <li>
+            <a href="/home/Index/en">
+                <img src="~/icones/en-us.png" />
+            </a>
+        </li>
+
+        <!--Espanhol-->
+        <li>
+            <a href="/home/Index/es">
+                <img src="~/icones/es-es.png" />
+            </a>
+        </li>
+
+    </ul>
+</div>
+<style>
+    ul li {
+        float:left;
+        list-style :none;
+        padding:4px;
+    }
+
+    ul li a{
+        text-decoration:none;
+    }
+
+    ul li:hover{
+        padding:2px;
+    }
+
+    img {
+        width: 30px;
+        height: 30px;
+        border-radius: 100px;
+    }
+</style>
+
+
+@Html.DevExpress().WebDocumentViewer(settings => {
+    settings.Name = "WebDocumentViewer";
+}).Bind(new DevExpress.XtraReports.Web.CachedReportSourceWeb(new PR.Report.Report1())).GetHtml()
